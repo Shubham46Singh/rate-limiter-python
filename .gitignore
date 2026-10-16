@@ -11,3 +11,8 @@ test-results/
 gitleaks.json
 .env
 .DS_Store
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example

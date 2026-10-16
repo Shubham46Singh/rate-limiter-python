@@ -93,8 +93,12 @@ def tiers():
 @app.post("/keys", status_code=201)
 def create_key(payload: dict = Body(...)):
     owner = str(payload.get("owner", "")).strip()
+
     if not owner:
         raise HTTPException(400, "owner is required")
+
+    if len(owner) > 100:
+        raise HTTPException(400, "owner must be 100 characters or fewer")
     try:
         want = tier(payload.get("tier", "free"))["name"]
     except LimitError as e:
