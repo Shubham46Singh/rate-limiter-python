@@ -1,0 +1,17 @@
+﻿.git
+.github
+.circleci
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.coverage
+coverage
+coverage.xml
+.env
+.env.*
+!.env.example
+Dockerfile.txt
+README.md
